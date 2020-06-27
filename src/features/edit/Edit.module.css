@@ -1,0 +1,22 @@
+.edit {
+  height: 100vh;
+  width: 100vw;
+}
+
+.edit__button {
+  background-color: #47B752;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.edit__button:hover {
+  background-color: #45C752;
+}
+
+.edit__button img {
+  margin-top: 5px;
+}
+
+.buttonPosition {
+  margin-top: 35px;
+}

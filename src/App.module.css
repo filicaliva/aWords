@@ -1,0 +1,40 @@
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.list {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 0 12px;
+  margin-bottom: 50px;
+}
+
+.text {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  text-decoration: none;
+  color: #727272;
+  font-size: 48px;
+  font-weight: 300;
+}
+
+a:hover {
+  color: #A2A2A2;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}

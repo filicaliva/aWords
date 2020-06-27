@@ -1,0 +1,45 @@
+.container__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.learn__button_cancel {
+  background-color: #EB5757;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.learn__button_cancel:hover {
+  background-color: #FF7474;
+}
+
+.learn__button_cancel img {
+  margin-top: 5px;
+}
+
+.learn__button_correct {
+  background-color: #47B752;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.learn__button_correct:hover {
+  background-color: #3ACB49;
+}
+
+.learn__button_correct img {
+  margin-top: 5px;
+}
+
+.edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
