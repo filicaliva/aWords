@@ -12,20 +12,20 @@ import {
     selectNumber,
     checkNumber,
     incorrect,
-    correct
+    correct,
+    addToLearning
 } from '../wordsSlice'
 
 export const Learn = () => {
 
-    const data = useSelector(selectWords)
+    let data = useSelector(selectWords)
     const number = useSelector(selectNumber)
 
     const dispatch = useDispatch()
 
+    useEffect(() => { dispatch(addToLearning()) }, [dispatch])
 
-
-    useEffect(() => { dispatch(checkNumber()) }, [data])
-
+  
 
 
     return (
@@ -55,13 +55,13 @@ export const Learn = () => {
                                 <div className={styles.container__button}>
                                     <button
                                         className={`${styles.learn__button_cancel} ${layout.button}`}
-                                        onClick={() => dispatch(incorrect())}
+                                        onClick={() => dispatch(checkNumber(), dispatch(incorrect()))}
                                     >
                                         <img src={close} alt="close" />
                                     </button>
                                     <button
                                         className={`${styles.learn__button_correct} ${layout.button}`}
-                                        onClick={() => dispatch(correct())}
+                                        onClick={() => dispatch(checkNumber(), dispatch(correct()))}
 
                                     >
                                         <img src={correctSvg} alt="correct" />

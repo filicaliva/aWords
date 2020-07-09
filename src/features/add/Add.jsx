@@ -37,6 +37,7 @@ export const Add = () => {
                         placeholder="Translate"
                         value={translate}
                         onChange={(e) => dispatch(setTranslate(e.target.value))}
+                        onKeyPress={(e) => e.key === 'Enter' ?  dispatch(add({ word, translate })) : null }
                     />
 
                     <button
