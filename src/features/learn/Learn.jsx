@@ -15,6 +15,7 @@ import {
     correct,
     addToLearning
 } from '../wordsSlice'
+import { Link } from 'react-router-dom'
 
 export const Learn = () => {
 
@@ -23,9 +24,9 @@ export const Learn = () => {
 
     const dispatch = useDispatch()
 
-    useEffect(() => { dispatch(addToLearning()) }, [dispatch])
+    useEffect(() => { dispatch(addToLearning()) }, [])
 
-  
+
 
 
     return (
@@ -36,7 +37,9 @@ export const Learn = () => {
                     <div className={layout.position}>
                         <section className={layout.container} >
                             <div className={styles.edit}>
-                                <img src={edit} alt="edit" />
+                                <Link to={`/edit/${data[number].id}`} >
+                                    <img src={edit} alt="edit" />
+                                </Link>
                             </div>
                             <input
                                 type="text"
@@ -62,9 +65,12 @@ export const Learn = () => {
                                     <button
                                         className={`${styles.learn__button_correct} ${layout.button}`}
                                         onClick={() => dispatch(checkNumber(), dispatch(correct()))}
-
                                     >
-                                        <img src={correctSvg} alt="correct" />
+                                        <img
+                                            src={correctSvg}
+                                            alt="correct"
+                                        />
+
                                     </button>
                                 </div>
                             </div>

@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { act } from 'react-dom/test-utils';
 
 
 export const wordsSlice = createSlice({
@@ -61,7 +60,7 @@ export const wordsSlice = createSlice({
                             item.time = arr.time
                         })
                     state.learning = state.learning.filter(item => item.id !== arr.id)
-                        
+
                 }
             }
             window.localStorage.setItem('learning', JSON.stringify(state.learning))
@@ -69,7 +68,7 @@ export const wordsSlice = createSlice({
         },
         checkNumber: state => {
             state.number + 1 < +state.learning.length ?
-                state.number++  : state.number = 0
+                state.number++ : state.number = 0
         },
         addToLearning: state => {
             const boxes = [
@@ -106,6 +105,7 @@ export const wordsSlice = createSlice({
                     time: 2629746000
                 }
             ]
+            state.learning = []
             for (let i = 0; i < state.dataBase.length; i++) {
                 const el = state.dataBase[i];
                 boxes.map(item => {
@@ -114,13 +114,24 @@ export const wordsSlice = createSlice({
                     }
                 })
             }
+            window.localStorage.setItem('learning', JSON.stringify(state.learning))
+        },
+        edit: (state, action) => {
+            const value = action.payload;
+            state.dataBase
+                .filter(item => +item.id === +value.id)
+                .map(item => {
+                    item.word = value.title
+                    item.translate = value.translate
+                })
 
+            state.word = state.translate = ''
+            window.localStorage.setItem('data', JSON.stringify(state.dataBase))
         }
-
     }
 })
 
-export const { add, setWord, setTranslate, incorrect, checkNumber, correct, addToLearning } = wordsSlice.actions;
+export const { add, setWord, setTranslate, incorrect, checkNumber, correct, addToLearning, edit } = wordsSlice.actions;
 
 export const selectWords = state => state.words.learning;
 export const selectWord = state => state.words.word;

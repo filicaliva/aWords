@@ -17,7 +17,7 @@ ReactDOM.render(
         <Switch>
           <Route path='/' exact component={App} />
           <Route path='/add' component={Add} />
-          <Route path='/edit/:id' component={Edit} />
+          <Route path='/edit/:id' exact component={Edit} />
           <Route path='/learn' component={Learn} />
           <Route path='*' component={App} />
         </Switch>
