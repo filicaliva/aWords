@@ -10,6 +10,8 @@ import {
     setTranslate,
     selectTranslate
 } from '../wordsSlice'
+import arrow from '../../symbols/arrow.svg'
+import { Link } from 'react-router-dom'
 
 
 export const Add = () => {
@@ -22,8 +24,17 @@ export const Add = () => {
     return (
 
         <section className={styles.add} >
+
             <div className={layout.position}>
+           
                 <div className={`${layout.container}`}>
+                <Link to='/' >
+                    <img
+                        src={arrow}
+                        alt="home"
+                        className={layout.arrow}
+                    />
+                </Link>
                     <input
                         type="text"
                         className={`${styles.add__title} ${layout.title}`}
@@ -37,7 +48,7 @@ export const Add = () => {
                         placeholder="Translate"
                         value={translate}
                         onChange={(e) => dispatch(setTranslate(e.target.value))}
-                        onKeyPress={(e) => e.key === 'Enter' ?  dispatch(add({ word, translate })) : null }
+                        onKeyPress={(e) => e.key === 'Enter' ? dispatch(add({ word, translate })) : null}
                     />
 
                     <button

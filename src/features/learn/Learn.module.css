@@ -43,3 +43,14 @@
   margin-top: 10px;
   cursor: pointer;
 }
+
+.text {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  text-decoration: none;
+  color: #727272;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 40vh;
+}

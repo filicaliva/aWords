@@ -1,12 +1,15 @@
 import React from 'react';
 import styles from './App.module.css';
 
+
+import { Link } from 'react-router-dom'
+
 export const App = () => {
   return (
     <div className={`${styles.main}`}>
       <ul className={`${styles.flex} ${styles.list}`}>
         <li>
-          <a href="/add" className={styles.text}>Add new word's</a>
+          <Link to="/add" className={styles.text}>Add new word's</Link>
         </li>
         <li>
           <span className={styles.text} >|</span>
@@ -14,7 +17,7 @@ export const App = () => {
 
 
         <li>
-          <a href="/learn" className={styles.text}>Learn new word's</a>
+          <Link to="/learn" className={styles.text}>Learn new word's</Link>
         </li>
       </ul>
     </div>
