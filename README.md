@@ -11,6 +11,7 @@
 * [Contact](#contact)
 
 ## General info
+https://fil-awords.herokuapp.com/
 I don't want to pay for apps for learning words therefore I have created an app for myself and my portfolio.
 
 ## Screenshots
