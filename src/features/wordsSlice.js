@@ -54,10 +54,10 @@ export const wordsSlice = createSlice({
                     arr.time = Date.now()
                     state.dataBase
                         .filter(item => item.id === arr.id)
-                        .map(item => {
-                            item.repeat = 5
-                            item.box = arr.box++
-                            item.time = arr.time
+                        .forEach(item => { 
+                                item.repeat = 5
+                                item.box = arr.box++
+                                item.time = arr.time 
                         })
                     state.learning = state.learning.filter(item => item.id !== arr.id)
 
@@ -108,7 +108,7 @@ export const wordsSlice = createSlice({
             state.learning = []
             for (let i = 0; i < state.dataBase.length; i++) {
                 const el = state.dataBase[i];
-                boxes.map(item => {
+                boxes.forEach(item => {
                     if (item.number === el.box && el.time + item.time <= Date.now()) {
                         state.learning.push(el)
                     }
@@ -120,7 +120,7 @@ export const wordsSlice = createSlice({
             const value = action.payload;
             state.dataBase
                 .filter(item => +item.id === +value.id)
-                .map(item => {
+                .forEach(item => {
                     item.word = value.title
                     item.translate = value.translate
                 })

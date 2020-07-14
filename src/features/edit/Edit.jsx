@@ -5,10 +5,9 @@ import correct from '../../symbols/correct.svg'
 import layout from '../layout.module.css'
 import styles from './Edit.module.css'
 import { useEffect } from 'react'
-import { useParams, Link, Route } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { edit, selectWord, selectTranslate, setWord, setTranslate, addToLearning } from '../wordsSlice'
-import { Learn } from '../learn/Learn'
 
 
 
@@ -22,12 +21,12 @@ export const Edit = () => {
     const dataBase = JSON.parse(window.localStorage.getItem('data'))
 
     useEffect(() => {
-        dataBase.map(item => {
+        dataBase.forEach(item => {
             if (item.id === +url.id) {
                 dispatch(setWord(item.word), dispatch(setTranslate(item.translate)))
             }
         })
-    }, [])
+    })
 
 
 
@@ -44,7 +43,7 @@ export const Edit = () => {
                     />
                     <input
                         type="text"
-                        className={`${styles.edit__translate} ${layout.translate}`}
+                        className={` ${layout.translate} ${styles.edit__translate}`}
                         placeholder="Translate"
                         value={translate}
                         onChange={(e) => dispatch(setTranslate(e.target.value))}
@@ -58,7 +57,7 @@ export const Edit = () => {
                                     title,
                                     translate
                                 })))}
-                            > <img src={correct} alt="correct" />
+                            > <img src={correct} alt="correct" className={styles.correct} />
                             </button>
                         </Link>
                     </div>

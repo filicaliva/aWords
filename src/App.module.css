@@ -38,3 +38,30 @@ a:hover {
   -webkit-transition: all .5s;
   transition: all .5s;
 }
+
+@media screen and (max-width: 800px) {
+  .text {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .text {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 452px) {
+  ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  ul li {
+    margin: 60px;
+  }
+  ul li:nth-child(2) {
+    display: none;
+  }
+}

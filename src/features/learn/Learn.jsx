@@ -22,14 +22,14 @@ import { useState } from 'react'
 export const Learn = () => {
 
     let data = useSelector(selectWords)
-    const number = useSelector(selectNumber)
+    let number = useSelector(selectNumber)
 
     const [translate, setTranslate] = useState('0')
 
 
     const dispatch = useDispatch()
 
-    useEffect(() => { dispatch(addToLearning()) }, [])
+    useEffect(() => { dispatch(addToLearning()) }, [dispatch])
 
     const showTranslate = () => {
         setTranslate('1')
@@ -66,7 +66,7 @@ export const Learn = () => {
                             </Link>
                             <div className={styles.edit}>
                                 <Link to={`/edit/${data[number].id}`} >
-                                    <img src={edit} alt="edit" />
+                                    <img src={edit} alt="edit" className={styles.learn__button_edit}/>
                                 </Link>
                             </div>
 
@@ -94,15 +94,20 @@ export const Learn = () => {
                                         className={`${styles.learn__button_cancel} ${layout.button}`}
                                         onClick={() => showTranslate()}
                                     >
-                                        <img src={close} alt="close" />
+                                        <img 
+                                        src={close} 
+                                        alt="close" 
+                                        className={styles.learn__button_cancel_img}
+                                        />
                                     </button>
                                     <button
                                         className={`${styles.learn__button_correct} ${layout.button}`}
                                         onClick={() => dispatch(checkNumber(), dispatch(correct()))}
-                                    >
+                                        >
                                         <img
                                             src={correctSvg}
                                             alt="correct"
+                                            className={styles.learn__button_correct_img}
                                         />
 
                                     </button>

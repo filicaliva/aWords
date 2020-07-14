@@ -86,7 +86,7 @@ input::placeholder {
   color: #9E9E9E;
 }
 
-button {
+.button {
   border: none;
   outline: none;
   cursor: pointer;
@@ -105,4 +105,81 @@ button {
   margin-left: 10px;
   border-radius: 50%;
   padding: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    max-width: 366px;
+    max-height: 264px;
+  }
+  .title {
+    margin: 20px 17%;
+    font-size: 40px;
+  }
+  .translate {
+    font-size: 26px;
+    margin-bottom: 80px;
+  }
+  .button {
+    width: 42px;
+    height: 42px;
+  }
+  .button span {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    max-width: 366px;
+    max-height: 264px;
+  }
+  .title {
+    font-size: 34px;
+  }
+  .translate {
+    font-size: 20px;
+    margin-bottom: 90px;
+  }
+  .button {
+    width: 38px;
+    height: 38px;
+  }
+  .button span {
+    font-size: 29px;
+  }
+  .arrow {
+    width: 19px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .container {
+    max-width: 276px;
+  }
+  .title {
+    margin: 20px 17%;
+    font-size: 35px;
+  }
+  .translate {
+    font-size: 20px;
+    margin-bottom: 120px;
+  }
+  .button {
+    width: 42px;
+    height: 42px;
+  }
+  .button span {
+    font-size: 28px;
+    margin-top: 2px;
+  }
+  .arrow {
+    width: 17px;
+  }
 }

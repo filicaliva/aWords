@@ -18,5 +18,40 @@
 }
 
 .buttonPosition {
-  margin-top: 35px;
+  margin-top: 45px;
+}
+
+@media screen and (max-width: 700px) {
+  .buttonPosition {
+    margin-top: 45px;
+  }
+  .edit__translate {
+    margin-bottom: 8px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .edit__title {
+    font-size: 40px;
+  }
+  .edit__translate {
+    font-size: 30px;
+  }
+  .edit__button {
+    width: 44px;
+    height: 44px;
+  }
+  .correct {
+    width: 20px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .edit__title {
+    font-size: 30px;
+  }
+  .edit__translate {
+    font-size: 20px;
+    margin: 20px 0;
+  }
 }
